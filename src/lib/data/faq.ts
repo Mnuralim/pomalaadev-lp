@@ -5,43 +5,33 @@ export interface FaqItem {
 
 export const faqItems: FaqItem[] = [
   {
-    question: "Berapa biaya bikin website atau aplikasi?",
+    question: "Bisa ji dikerja online kalau saya di luar Pomalaa?",
     answer:
-      "Tergantung kebutuhan dan seberapa rumit sistemnya. Ceritakan dulu mau bikin apa, nanti kami bantu hitungin estimasinya.",
+      "Bisa. Semua bisa lewat WA dan video call. Kalau di sekitar Kolaka, bisa ki ketemu langsung.",
   },
   {
-    question: "Berapa lama waktu pengerjaannya?",
+    question: "Berapa lama bikin aplikasi?",
     answer:
-      "Buat website atau MVP biasanya 4-8 minggu. Sistem yang lebih besar bisa 3-6 bulan, tergantung rumit atau enggaknya.",
+      "Website profil biasanya 1 sampai 2 minggu. Aplikasi kantor tergantung fiturnya, kami kasih jadwal jelas waktu konsultasi.",
   },
   {
-    question: "Bisa dibikin sesuai cara kerja perusahaan kami?",
+    question: "Dapat ji source code-nya?",
     answer:
-      "Bisa. Kami mulai dari ngerti dulu cara kerja Anda, bukan asal pakai template yang udah jadi.",
+      "Dapat. Source code dan akses sistemnya punya ta' sepenuhnya, sesuai kesepakatan di awal.",
   },
   {
-    question: "Saya dapat source code-nya, kan?",
+    question: "Data pajak ku aman ji?",
     answer:
-      "Dapat. Source code dan akses sistemnya sepenuhnya punya Anda, sesuai kesepakatan di awal.",
+      "Aman. Data cuma dipakai untuk urusan ta', nda disebar, dan kami hapus setelah selesai kalau ki minta.",
   },
   {
-    question: "Ada layanan maintenance setelah proyek selesai?",
+    question: "Mahasiswa bisa ji didampingi tugas akhir?",
     answer:
-      "Ada. Kami sediakan paket maintenance yang fleksibel biar sistemnya tetap update, aman, dan lancar.",
+      "Bisa. Kami dampingi ki belajar dan paham kodenya, supaya siap waktu sidang. Bukan kami yang kerja semua.",
   },
   {
-    question: "Pomalaa.dev bantu hosting dan deployment juga?",
+    question: "Kalau sudah jadi, masih dibantu ji?",
     answer:
-      "Bantu. Kami bisa siapin server sampai pastiin sistemnya jalan stabil sebelum dipakai tim Anda.",
-  },
-  {
-    question: "Kalau nanti mau dikembangkan lagi, bisa?",
-    answer:
-      "Bisa. Tiap sistem kami rancang biar gampang ditambah fitur pas kebutuhan usaha Anda makin banyak.",
-  },
-  {
-    question: "Bisa disambungkan ke sistem yang udah kami pakai?",
-    answer:
-      "Bisa. Kami udah biasa nangani integrasi API dan bisa hubungkan sistem kami ke tools yang udah Anda pakai.",
+      "Masih. Habis serah terima, kami dampingi kalau ada kendala. Mau tambah fitur nanti juga bisa.",
   },
 ];

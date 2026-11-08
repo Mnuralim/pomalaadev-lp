@@ -1,24 +1,23 @@
 import type { Metadata, Viewport } from "next";
-import { Hanken_Grotesk, Inter } from "next/font/google";
+import { Bricolage_Grotesque, Geist } from "next/font/google";
 import { ThemeProvider } from "@/components/theme/theme-provider";
+import { BackToTop } from "@/components/layout/back-to-top";
 import "./globals.css";
 
-const hankenGrotesk = Hanken_Grotesk({
-  variable: "--font-hanken-grotesk",
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const geist = Geist({
+  variable: "--font-geist",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
 });
 
 const siteUrl = "https://pomalaa.dev";
-const title = "Pomalaa Dev | Website dan Aplikasi yang Benar-Benar Bekerja";
+const title = "Pomalaa Dev | Aplikasi, CV Lamaran, dan Urusan Pajak di Pomalaa";
 const description =
-  "Kami bantu usaha membangun website, aplikasi, dan sistem digital yang mempercepat pekerjaan, merapikan operasional, dan menambah kepercayaan pelanggan.";
+  "Jasa digital dari Pomalaa untuk perusahaan, UMKM, mahasiswa, dan pencari kerja: aplikasi web dan Android, CV dan surat lamaran, aktivasi Coretax, sampai lapor SPT.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -34,6 +33,10 @@ export const metadata: Metadata = {
     "aplikasi bisnis custom",
     "jasa website Kolaka",
     "jasa website Sulawesi Tenggara",
+    "jasa aplikasi Android Kolaka",
+    "jasa pembuatan CV ATS",
+    "jasa lapor SPT Coretax",
+    "pendampingan proyek kuliah IT",
     "Pomalaa Dev",
   ],
   authors: [{ name: "Pomalaa Dev" }],
@@ -85,12 +88,13 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`${hankenGrotesk.variable} ${inter.variable} scroll-smooth`}
+      className={`${bricolage.variable} ${geist.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <body className="antialiased bg-background text-on-background">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           {children}
+          <BackToTop />
         </ThemeProvider>
       </body>
     </html>

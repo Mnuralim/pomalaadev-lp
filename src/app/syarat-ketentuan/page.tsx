@@ -14,7 +14,7 @@ export default function SyaratKetentuanPage() {
   return (
     <>
       <SiteHeader />
-      <main className="mx-auto max-w-[800px] px-margin-mobile pb-32 pt-40 md:px-margin-desktop md:pt-48">
+      <main className="mx-auto max-w-[800px] px-margin-mobile pb-32 pt-20 md:px-margin-desktop md:pt-28">
         <h1 className="font-display text-headline-lg mb-10 text-on-background">
           Syarat & Ketentuan
         </h1>

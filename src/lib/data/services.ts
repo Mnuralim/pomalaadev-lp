@@ -1,54 +1,36 @@
 import type { LucideIcon } from "lucide-react";
-import {
-  Globe,
-  Package,
-  Smartphone,
-  Store,
-  BrainCircuit,
-  Plug,
-} from "lucide-react";
+import { FileText, Receipt, Smartphone } from "lucide-react";
 
 export interface Service {
   icon: LucideIcon;
   title: string;
   description: string;
+  items?: string[];
 }
 
 export const services: Service[] = [
   {
-    icon: Globe,
-    title: "Website Usaha",
-    description:
-      "Punya website bikin usaha Anda kelihatan lebih niat dan gampang dipercaya calon pelanggan baru.",
-  },
-  {
-    icon: Package,
-    title: "Sistem Internal",
-    description:
-      "Catatan yang tadinya nyebar di Excel dan WhatsApp, dikumpulin jadi satu sistem yang gampang dicek.",
-  },
-  {
     icon: Smartphone,
-    title: "Aplikasi Mobile",
+    title: "Aplikasi web & Android",
     description:
-      "Bikin pelanggan dan tim Anda gampang mengakses layanan lewat aplikasi yang praktis dipakai.",
+      "Dibikinkan sesuai alur kerja kantor ta'. Bukan template, tapi ikut cara kerja tim ta' sehari-hari.",
+    items: [
+      "Aplikasi akuntansi & kasir",
+      "Monitoring alat berat",
+      "Website profil usaha",
+      "Pendampingan proyek kuliah IT",
+    ],
   },
   {
-    icon: Store,
-    title: "Sistem Kasir (POS)",
+    icon: FileText,
+    title: "CV & surat lamaran",
     description:
-      "Transaksi harian jadi lebih cepat dan datanya otomatis tercatat, gak perlu tulis ulang manual.",
+      "CV rapi yang gampang dibaca sistem HRD, plus surat lamaran yang nda kaku.",
   },
   {
-    icon: BrainCircuit,
-    title: "Otomatisasi & AI",
+    icon: Receipt,
+    title: "Urusan pajak",
     description:
-      "Kerjaan yang berulang-ulang, kayak input data sampai bikin laporan, bisa jalan sendiri otomatis.",
-  },
-  {
-    icon: Plug,
-    title: "Integrasi Sistem",
-    description:
-      "Tools yang udah Anda pakai kami hubungkan, biar data antar bagian gak terpisah-pisah lagi.",
+      "Aktivasi akun Coretax sampai lapor SPT tahunan. Nda usah mi pusing sendiri.",
   },
 ];

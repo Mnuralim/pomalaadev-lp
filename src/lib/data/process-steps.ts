@@ -1,28 +1,23 @@
 export interface ProcessStep {
-  number: string;
   title: string;
   description: string;
 }
 
 export const processSteps: ProcessStep[] = [
   {
-    number: "01",
-    title: "Ceritakan Kebutuhan",
-    description: "Kami dengerin dulu masalah dan maunya usaha Anda apa.",
+    title: "Cerita mi dulu",
+    description: "Chat WA atau DM Instagram. Gratis, nda ada ikatan.",
   },
   {
-    number: "02",
-    title: "Kami Petakan Solusinya",
-    description: "Kebutuhan itu kami rancang jadi tampilan dan alurnya.",
+    title: "Kami hitungkan",
+    description: "Dapat ki rincian harga sama waktu pengerjaan.",
   },
   {
-    number: "03",
-    title: "Kami Bangun dan Uji Coba",
-    description: "Dikerjain sambil update rutin, dicoba dulu sebelum dipakai.",
+    title: "Dikerja",
+    description: "Kami kabari terus progresnya, bisa ki minta revisi.",
   },
   {
-    number: "04",
-    title: "Siap Dipakai",
-    description: "Serah terima ke tim Anda, kami tetap kawal setelahnya.",
+    title: "Serah terima",
+    description: "Diajari pakainya, terus kami dampingi kalau ada kendala.",
   },
 ];

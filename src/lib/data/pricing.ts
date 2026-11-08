@@ -1,52 +1,39 @@
-export interface PricingTier {
-  name: string;
-  description: string;
-  price: string;
-  priceSuffix: string;
-  features: string[];
-  ctaLabel: string;
-  featured?: boolean;
+import type { LucideIcon } from "lucide-react";
+import { FileText, Receipt, Smartphone } from "lucide-react";
+
+export interface PriceGroup {
+  icon: LucideIcon;
+  title: string;
+  items: { name: string; price: string }[];
 }
 
-export const pricingTiers: PricingTier[] = [
+// shortcut: semua harga masih contoh, ganti dengan harga asli
+export const priceGroups: PriceGroup[] = [
   {
-    name: "Tampil Profesional",
-    description: "Cocok buat company profile, landing page, atau MVP kecil-kecilan.",
-    price: "Custom",
-    priceSuffix: "/ Proyek",
-    features: [
-      "Landing Page Modern",
-      "5 Komponen Custom",
-      "Responsif di Semua Perangkat",
-      "Support 30 Hari",
+    icon: Smartphone,
+    title: "Aplikasi",
+    items: [
+      { name: "Website profil", price: "mulai Rp 1,5jt" },
+      { name: "Aplikasi kantor", price: "mulai Rp 5jt" },
+      { name: "Pendampingan kuliah", price: "mulai Rp 300rb" },
     ],
-    ctaLabel: "Dapatkan Estimasi",
   },
   {
-    name: "Sistem Bisnis",
-    description: "Buat aplikasi dan sistem internal yang lebih lengkap.",
-    price: "Fleksibel",
-    priceSuffix: "/ Proyek",
-    features: [
-      "Aplikasi Web Custom",
-      "Integrasi CRM / POS",
-      "Autentikasi Pengguna",
-      "Support 90 Hari",
+    icon: FileText,
+    title: "Lamaran kerja",
+    items: [
+      { name: "CV ATS", price: "mulai Rp 50rb" },
+      { name: "Surat lamaran", price: "mulai Rp 25rb" },
+      { name: "Paket CV + surat", price: "mulai Rp 65rb" },
     ],
-    ctaLabel: "Dapatkan Estimasi",
-    featured: true,
   },
   {
-    name: "Solusi Khusus",
-    description: "Ada tim khusus buat kebutuhan sistem yang lebih rumit.",
-    price: "Retainer",
-    priceSuffix: "/ Bulan",
-    features: [
-      "Tim Engineering Khusus",
-      "Pelatihan Model AI",
-      "Audit Keamanan",
-      "Support Prioritas 24/7",
+    icon: Receipt,
+    title: "Pajak",
+    items: [
+      { name: "Aktivasi Coretax", price: "mulai Rp 50rb" },
+      { name: "Lapor SPT pribadi", price: "mulai Rp 75rb" },
+      { name: "SPT badan usaha", price: "tanya dulu" },
     ],
-    ctaLabel: "Diskusikan Proyek",
   },
 ];

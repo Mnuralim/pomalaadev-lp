@@ -17,20 +17,20 @@ export function MobileNav() {
         type="button"
         aria-label={open ? "Tutup menu" : "Buka menu"}
         onClick={() => setOpen((prev) => !prev)}
-        className="flex h-10 w-10 items-center justify-center rounded-full border border-border-subtle text-on-background"
+        className="flex h-10 w-10 items-center justify-center border border-border-subtle text-on-background"
       >
         {open ? <X size={20} /> : <Menu size={20} />}
       </button>
 
       <div
         className={cn(
-          "fixed inset-x-0 top-20 z-40 origin-top border-b border-border-subtle bg-background transition-all duration-200",
+          "fixed inset-x-0 top-16 z-40 origin-top border-b border-border-subtle bg-background transition-all duration-200",
           open
             ? "pointer-events-auto scale-y-100 opacity-100"
             : "pointer-events-none scale-y-95 opacity-0",
         )}
       >
-        <div className="flex flex-col gap-6 px-margin-mobile py-8">
+        <div className="flex flex-col gap-6 px-5 py-8">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -42,15 +42,13 @@ export function MobileNav() {
             </Link>
           ))}
           <Button
-            href={getWhatsappLink(
-              "Halo, saya mau diskusikan proyek website/aplikasi.",
-            )}
+            href={getWhatsappLink("Halo Pomalaa Dev, mau ka konsultasi dulu.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full rounded-full py-3"
+            className="w-full"
             onClick={() => setOpen(false)}
           >
-            Diskusikan Proyek
+            Konsultasi gratis
           </Button>
         </div>
       </div>

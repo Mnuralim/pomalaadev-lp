@@ -5,13 +5,14 @@
 :root {
   --color-primary: #ffd233;
   --color-on-primary: #111111;
-  --color-background: #ffffff;
+  --color-primary-soft: #fff6d1;
+  --color-background: #fafaf8;
   --color-surface: #ffffff;
-  --color-on-background: #111111;
-  --color-secondary: #6b7280;
-  --color-border-subtle: #e5e7eb;
-  --color-surface-container: #f9fafb;
-  --color-surface-container-low: #f3f4f6;
+  --color-on-background: #141414;
+  --color-secondary: #5b5b57;
+  --color-border-subtle: #e4e4e0;
+  --color-surface-container: #f4f4f1;
+  --color-surface-container-low: #ededea;
   --color-success: #10b981;
   --color-inverse-surface: #111111;
   --color-on-inverse-surface: #f5f5f5;
@@ -21,13 +22,14 @@
 .dark {
   --color-primary: #ffd233;
   --color-on-primary: #111111;
-  --color-background: #0a0a0a;
-  --color-surface: #131313;
-  --color-on-background: #f5f5f5;
-  --color-secondary: #9ca3af;
-  --color-border-subtle: #262626;
-  --color-surface-container: #171717;
-  --color-surface-container-low: #1f1f1f;
+  --color-primary-soft: #2b2612;
+  --color-background: #0f0f0e;
+  --color-surface: #171716;
+  --color-on-background: #f2f2ee;
+  --color-secondary: #a3a39c;
+  --color-border-subtle: #2a2a28;
+  --color-surface-container: #1d1d1b;
+  --color-surface-container-low: #242422;
   --color-success: #10b981;
   --color-inverse-surface: #000000;
   --color-on-inverse-surface: #f5f5f5;
@@ -37,6 +39,7 @@
 @theme inline {
   --color-primary: var(--color-primary);
   --color-on-primary: var(--color-on-primary);
+  --color-primary-soft: var(--color-primary-soft);
   --color-background: var(--color-background);
   --color-surface: var(--color-surface);
   --color-on-background: var(--color-on-background);
@@ -49,8 +52,8 @@
   --color-on-inverse-surface: var(--color-on-inverse-surface);
   --color-on-inverse-surface-secondary: var(--color-on-inverse-surface-secondary);
 
-  --font-display: var(--font-hanken-grotesk), sans-serif;
-  --font-body: var(--font-inter), sans-serif;
+  --font-display: var(--font-bricolage), sans-serif;
+  --font-body: var(--font-geist), sans-serif;
 
   --radius-DEFAULT: 0.125rem;
   --radius-lg: 0.25rem;
@@ -60,7 +63,7 @@
   --spacing-gutter: 24px;
   --spacing-margin-desktop: 48px;
   --spacing-margin-mobile: 16px;
-  --container-max-width: 1200px;
+  --container-max-width: 1280px;
 
   --text-headline-md: 32px;
   --text-headline-md--line-height: 1.2;
@@ -112,39 +115,52 @@ h4,
   -webkit-backdrop-filter: blur(12px);
 }
 
-.scale-hover {
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.scale-hover:hover {
-  transform: scale(1.02);
-}
 
-.active-tap {
-  transition: transform 0.1s ease;
-}
-.active-tap:active {
-  transform: scale(0.98);
-}
 
 .reveal {
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.6s ease-out;
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
 }
 
-.mockup-shadow {
-  box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.15);
+/* hero chat: pesan muncul satu-satu */
+.chat-bubble {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: chat-pop 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(var(--i) * 550ms + 400ms);
+}
+@keyframes chat-pop {
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-.tech-card {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* percakapan baru masuk dari kanan */
+.chat-slide-in {
+  animation: chat-slide-in 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.tech-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--color-primary);
-  box-shadow: 0 10px 30px -10px rgba(255, 210, 51, 0.3);
+@keyframes chat-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .chat-slide-in,
+  .chat-bubble {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    animation: none;
+  }
 }

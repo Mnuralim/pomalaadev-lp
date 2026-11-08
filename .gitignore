@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# pratinjau desain HTML (bukan bagian aplikasi)
+/designs/
+
+# editor & tools lokal
+.vscode/
+.idea/
+.claude/settings.local.json

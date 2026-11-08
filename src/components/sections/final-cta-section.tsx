@@ -1,32 +1,35 @@
-import { Reveal } from "@/components/ui/reveal";
+import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getWhatsappLink } from "@/lib/whatsapp";
+import { INSTAGRAM_URL } from "@/lib/social";
 
 export function FinalCtaSection() {
   return (
-    <section className="py-32">
-      <div className="mx-auto max-w-(--container-max-width) px-margin-mobile md:px-margin-desktop">
-        <Reveal className="relative overflow-hidden rounded-[40px] bg-inverse-surface p-16 text-center text-on-inverse-surface md:p-24">
-          <div className="pointer-events-none absolute inset-0 opacity-10">
-            <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-primary blur-[120px]" />
-            <div className="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-primary blur-[120px]" />
-          </div>
-          <h2 className="font-display text-headline-lg md:text-headline-xl relative z-10 mb-8 font-bold">
-            Ada Proses yang Kerasa <br /> Bisa Lebih Simpel?
-          </h2>
-          <p className="text-body-lg relative z-10 mx-auto mb-12 max-w-xl text-on-inverse-surface-secondary">
-            Ceritakan aja kebutuhan usaha Anda. Kami bantu lihat apakah
-            website, aplikasi, atau sistem internal jadi jawabannya.
-          </p>
+    <section className="bg-primary text-on-primary">
+      <div className="mx-auto flex max-w-(--container-max-width) flex-col items-start justify-between gap-6 px-5 py-16 md:flex-row md:items-center">
+        <h2 className="font-display text-4xl font-extrabold tracking-tight md:text-5xl">
+          Cerita mi dulu, gratis ji.
+        </h2>
+        <div className="flex flex-col items-start gap-3">
+          {/* selalu gelap di atas kuning, nda ikut tema */}
           <Button
-            href={getWhatsappLink("Halo, saya mau ceritakan proyek saya.")}
+            href={getWhatsappLink("Halo Pomalaa Dev, mau ka konsultasi dulu.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative z-10 px-12 py-5"
+            className="bg-[#141414] text-[#fafaf8]"
           >
-            Ceritakan Proyek Anda
+            <MessageCircle size={20} />
+            Konsultasi gratis
           </Button>
-        </Reveal>
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm underline underline-offset-4"
+          >
+            atau DM Instagram @pomalaa.dev
+          </a>
+        </div>
       </div>
     </section>
   );

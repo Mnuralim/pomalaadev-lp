@@ -1,26 +1,29 @@
 export interface Project {
   title: string;
   description: string;
-  tags: string[];
-  techs: string[];
-  kind: "mobile" | "dashboard";
+  image: string;
+  /** true = proyek contoh, ganti dengan proyek asli */
+  sample?: boolean;
 }
 
+// shortcut: gambar masih placeholder picsum, ganti dengan screenshot asli di /public
 export const projects: Project[] = [
   {
-    title: "NexuBank Platform",
+    title: "SkuyMiBro",
     description:
-      "Transaksi yang tadinya lambat dan gampang salah catat, sekarang jalan real-time dalam satu aplikasi.",
-    tags: ["Fintech", "Aplikasi Mobile"],
-    techs: ["React Native", "Node.js"],
-    kind: "mobile",
+      "Website media lokal Kolaka, lengkap dengan direktori UMKM dan panel admin.",
+    image: "https://picsum.photos/seed/skuymibro-kolaka/1200/800",
   },
   {
-    title: "LogiSmart AI",
-    description:
-      "Rute pengiriman yang dulu ditentukan manual, sekarang dihitung otomatis, waktu tempuh pun jadi lebih singkat.",
-    tags: ["Logistik", "Dashboard"],
-    techs: ["Next.js", "OpenAI"],
-    kind: "dashboard",
+    title: "Monitoring alat berat",
+    description: "Aplikasi Android untuk laporan jam kerja alat di lapangan.",
+    image: "https://picsum.photos/seed/heavy-equipment-site/800/450",
+    sample: true,
+  },
+  {
+    title: "Aplikasi akuntansi kantor",
+    description: "Pembukuan dan laporan keuangan dalam satu aplikasi web.",
+    image: "https://picsum.photos/seed/accounting-ledger/800/450",
+    sample: true,
   },
 ];

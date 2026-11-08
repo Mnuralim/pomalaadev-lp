@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
-export const alt = "Pomalaa Dev - Website dan aplikasi yang benar-benar bekerja";
+export const alt = "Pomalaa Dev - Urusan digital ta', kami mi yang urus";
 export const size = {
   width: 1200,
   height: 630,
@@ -41,8 +41,8 @@ export default async function Image() {
             lineHeight: 1.2,
           }}
         >
-          Website dan aplikasi yang{" "}
-          <span style={{ color: "#ffd233" }}>benar-benar bekerja.</span>
+          Urusan digital ta&apos;,{" "}
+          <span style={{ color: "#ffd233" }}>kami mi yang urus.</span>
         </div>
         <div
           style={{
@@ -52,7 +52,7 @@ export default async function Image() {
             color: "#9ca3af",
           }}
         >
-          pomalaa.dev
+          Aplikasi, CV lamaran, sampai lapor SPT. pomalaa.dev
         </div>
       </div>
     ),

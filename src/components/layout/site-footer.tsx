@@ -1,129 +1,96 @@
 import Link from "next/link";
-import { Globe, AtSign, Share2, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { navLinks } from "@/lib/data/nav-links";
 import { Logo } from "@/components/ui/logo";
 import { getWhatsappLink } from "@/lib/whatsapp";
+import { INSTAGRAM_URL } from "@/lib/social";
 
 const legalLinks = [
-  { label: "Kebijakan Privasi", href: "/kebijakan-privasi", external: false },
-  { label: "Syarat & Ketentuan", href: "/syarat-ketentuan", external: false },
-  { label: "Keamanan", href: "/keamanan", external: false },
-  {
-    label: "Kontak",
-    href: getWhatsappLink("Halo, saya mau tanya-tanya dulu."),
-    external: true,
-  },
+  { label: "Kebijakan Privasi", href: "/kebijakan-privasi" },
+  { label: "Syarat & Ketentuan", href: "/syarat-ketentuan" },
+  { label: "Keamanan", href: "/keamanan" },
 ];
 
-const socialLinks = [
-  { icon: Globe, href: "#", label: "Website" },
-  { icon: AtSign, href: "#", label: "Email" },
-  { icon: Share2, href: "#", label: "Share" },
+const contactLinks = [
+  {
+    label: "WhatsApp +62 851-7699-6948",
+    href: getWhatsappLink("Halo Pomalaa Dev, mau ka tanya-tanya dulu."),
+  },
+  { label: "Instagram @pomalaa.dev", href: INSTAGRAM_URL },
+  { label: "hello@pomalaadev.com", href: "mailto:hello@pomalaadev.com" },
 ];
+
+const linkClass = "text-secondary transition-colors hover:text-on-background";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border-subtle bg-background py-20">
-      <div className="mx-auto max-w-(--container-max-width) px-margin-mobile md:px-margin-desktop">
-        <div className="mb-20 grid grid-cols-2 gap-12 md:grid-cols-4">
-          <div className="col-span-2">
-            <div className="mb-6 flex items-center gap-3">
-              <Logo size={32} />
-              <span className="font-display text-headline-md font-bold tracking-tighter text-on-background">
-                Pomalaa Dev
-              </span>
-            </div>
-            <p className="text-body-md mb-4 max-w-xs text-secondary">
-              Kami bantu usaha bikin website, aplikasi, dan sistem yang
-              beneran kepake.
-            </p>
-            <div className="mb-8 flex items-center gap-2 text-body-md text-secondary">
-              <MapPin size={16} className="shrink-0" />
-              <span>Pomalaa, Kolaka, Sulawesi Tenggara</span>
-            </div>
-            <div className="flex gap-4">
-              {socialLinks.map(({ icon: Icon, href, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-border-subtle text-secondary transition-all hover:border-on-background hover:text-on-background"
-                >
-                  <Icon size={20} />
-                </a>
-              ))}
-            </div>
+    <footer className="border-t border-border-subtle bg-background">
+      <div className="mx-auto grid max-w-(--container-max-width) gap-12 px-5 py-16 md:grid-cols-12">
+        <div className="md:col-span-5">
+          <div className="flex items-center gap-2.5">
+            <Logo size={28} />
+            <span className="font-display text-lg font-bold tracking-tight">
+              Pomalaa Dev
+            </span>
           </div>
-
-          <div>
-            <h5 className="text-label-md mb-6 font-bold uppercase tracking-widest text-on-background">
-              Perusahaan
-            </h5>
-            <ul className="space-y-4">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-body-md text-secondary transition-colors hover:text-on-background"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h5 className="text-label-md mb-6 font-bold uppercase tracking-widest text-on-background">
-              Legalitas
-            </h5>
-            <ul className="space-y-4">
-              {legalLinks.map((link) => (
-                <li key={link.label}>
-                  {link.external ? (
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-body-md text-secondary transition-colors hover:text-on-background"
-                    >
-                      {link.label}
-                    </a>
-                  ) : (
-                    <Link
-                      href={link.href}
-                      className="text-body-md text-secondary transition-colors hover:text-on-background"
-                    >
-                      {link.label}
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-border-subtle pt-8 md:flex-row">
-          <p className="text-secondary text-sm">
-            © 2026 Pomalaa Dev. Dibangun untuk bekerja.
+          <p className="mt-4 max-w-xs text-secondary">
+            Jasa digital dari Pomalaa. Aplikasi, CV lamaran, sampai urusan
+            pajak.
           </p>
-          <div className="flex gap-8 text-secondary text-sm">
-            <a
-              href="mailto:hello@pomalaadev.com"
-              className="hover:text-on-background"
-            >
-              hello@pomalaadev.com
-            </a>
-            <a
-              href={getWhatsappLink("Halo, saya mau tanya-tanya dulu.")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-on-background"
-            >
-              +62 851-7699-6948
-            </a>
-          </div>
+          <p className="mt-4 flex items-center gap-2 text-sm text-secondary">
+            <MapPin size={16} className="shrink-0" />
+            Pomalaa, Kolaka, Sulawesi Tenggara
+          </p>
         </div>
+
+        <nav aria-label="Halaman" className="md:col-span-2">
+          <h2 className="font-display font-bold">Menu</h2>
+          <ul className="mt-4 space-y-3 text-sm">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className={linkClass}>
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className="md:col-span-3">
+          <h2 className="font-display font-bold">Hubungi kami</h2>
+          <ul className="mt-4 space-y-3 text-sm">
+            {contactLinks.map((link) => (
+              <li key={link.label}>
+                <a
+                  href={link.href}
+                  target={link.href.startsWith("http") ? "_blank" : undefined}
+                  rel="noopener noreferrer"
+                  className={linkClass}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="md:col-span-2">
+          <h2 className="font-display font-bold">Legal</h2>
+          <ul className="mt-4 space-y-3 text-sm">
+            {legalLinks.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className={linkClass}>
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div className="border-t border-border-subtle">
+        <p className="mx-auto max-w-(--container-max-width) px-5 py-6 text-sm text-secondary">
+          © 2026 Pomalaa Dev
+        </p>
       </div>
     </footer>
   );
